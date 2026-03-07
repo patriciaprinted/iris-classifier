@@ -28,6 +28,11 @@ def main() -> None:
     model = DecisionTreeClassifier(random_state=42)
     model.fit(X_train, y_train)
 
+    import joblib
+
+    joblib.dump(model, "outputs/model.joblib")
+
+
     # Predict + evaluate
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
@@ -52,6 +57,7 @@ def main() -> None:
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=iris.target_names)
     disp.plot()
     plt.title("Confusion Matrix")
+    plt.savefig("outputs/confusion_matrix.png")
     plt.show()
 
 
