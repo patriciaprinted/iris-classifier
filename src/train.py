@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
+import joblib
 
 
 def main() -> None:
@@ -28,8 +29,7 @@ def main() -> None:
     model = DecisionTreeClassifier(random_state=42)
     model.fit(X_train, y_train)
 
-    import joblib
-
+    # Save trained model
     joblib.dump(model, "outputs/model.joblib")
 
 
@@ -58,7 +58,7 @@ def main() -> None:
     disp.plot()
     plt.title("Confusion Matrix")
     plt.savefig("outputs/confusion_matrix.png")
-    plt.show()
+    plt.close()
 
 
 if __name__ == "__main__":
