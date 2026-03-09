@@ -19,13 +19,21 @@ The model is trained, evaluated, and visualized using Python.
 ```
 iris-classifier/
 │
-├── src/
-│   └── train.py        # Main training script
+├── notebooks/
+│ └── iris_model.ipynb # Jupyter notebook for interactive exploration
 │
-├── requirements.txt    # Python dependencies
-├── .gitignore          # Files excluded from version control
-└── README.md           # Project documentation
-```
+├── outputs/
+│ ├── confusion_matrix.png # Saved evaluation visualization
+│ └── model.joblib # Serialized trained model
+│
+├── src/
+│ └── train.py # Main training script
+│
+├── tests/ # Project test / configuration files
+│
+├── requirements.txt # Python dependencies
+├── .gitignore # Files excluded from version control
+└── README.md # Project documentation
 
 ---
 
@@ -85,6 +93,7 @@ Model accuracy: 1.0
 * scikit-learn
 * matplotlib
 * NumPy
+* joblib
 
 ---
 
